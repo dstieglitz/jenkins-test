@@ -1,0 +1,11 @@
+{"environments":{
+  "develop":{
+    {"credential_1":"abcd-efjg-ijkl-mnop-qrst"},
+    {"credential_2":"1234-5678-9012-3456-7890"}
+  },
+  "main":{
+    {"credential_1":"zzzz-zzzz-zzzz-zzzz-zzzz"},
+    {"credential_2":"0000-0000-0000-0000-0000"}
+  }
+}  
+
