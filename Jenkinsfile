@@ -2,6 +2,7 @@ def distribution
 def VERSION
 def tag
 def gradle_log_level
+def defaults
 
 node {
    all_defaults = readProperties file: 'jenkinsfile.properties'
@@ -10,6 +11,10 @@ node {
    distribution = all_defaults['distribution_property']
    tag = all_defaults['tag_property']
    gradle_log_level = all_defaults['gradle_log_level']
+   defaults = new Properties()
+   defaults.addAll(all_defaults)
+   defaults.addAll(branch_defaults)
+   println defaults
 }
 
 properties([
