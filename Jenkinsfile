@@ -11,7 +11,7 @@ node {
    distribution = all_defaults['distribution_property']
    tag = all_defaults['tag_property']
    gradle_log_level = all_defaults['gradle_log_level']
-   defaults = new Properties()
+   defaults = [:]
    defaults.addAll(all_defaults)
    defaults.addAll(branch_defaults)
    println defaults
