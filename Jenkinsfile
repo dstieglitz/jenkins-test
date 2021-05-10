@@ -6,7 +6,7 @@ def gradle_log_level
 node {
    all_defaults = readProperties file: 'jenkinsfile.properties'
    branch_defaults = readProperties file:"${BRANCH_NAME}.properties"
-   VERSION = props['version']
+   VERSION = branch_defaults['version']
    distribution = all_defaults['distribution_property']
    tag = all_defaults['tag_property']
    gradle_log_level = all_defaults['gradle_log_level']
