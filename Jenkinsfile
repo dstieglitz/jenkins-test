@@ -1,22 +1,15 @@
+def props
+def VERSION
+def FIX
+def RELEASE
+
 node {
-   script {
-      def props = readProperties file: "jenkinsfile.properties"
-
-      def distribution= props['distribution_property'] 
-      def tag= props['tag_property']
-
-      properties([
-         parameters([ 
-            string(name: 'distribution', defaultValue: "$distribution", description: 'apt distribution'),
-            string(name: 'tag', defaultValue: "$tag", description: 'just a tag'),
-            choice(name: 'gradle_log_level', defaultValue: "$gradle_log_level", choices: ['quiet', 'warn', 'info', 'debug'].join('\n'), description: 'quiet || warn || info || debug')
-         ])
-      ])
-
-         echo "distribution: ${params.distribution}"
-         echo "tag: ${params.tag}"
-   }
+   props = readProperties file:'props.txt'
+   VERSION = props['version']
+   FIX = props['fix']
+   RELEASE = VERSION + "_" + FIX
 }
+
 
 pipeline {
     agent any
@@ -25,6 +18,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
+                echo $VERSION
             }
         }
     }
