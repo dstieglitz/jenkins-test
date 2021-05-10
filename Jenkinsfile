@@ -12,8 +12,8 @@ node {
    tag = all_defaults['tag_property']
    gradle_log_level = all_defaults['gradle_log_level']
    defaults = [:]
-   defaults.addAll(all_defaults)
-   defaults.addAll(branch_defaults)
+   defaults.putAll(all_defaults)
+   defaults.putAll(branch_defaults)
    println defaults
 }
 
