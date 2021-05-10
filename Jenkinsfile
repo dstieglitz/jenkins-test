@@ -18,7 +18,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                echo $VERSION
+               echo ${VERSION}
             }
         }
     }
