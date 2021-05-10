@@ -4,10 +4,8 @@ def FIX
 def RELEASE
 
 node {
-   props = readProperties file:'jenkinsfile.properties'
-   VERSION = props['distribution_property']
-   FIX = props['tag_property']
-   RELEASE = VERSION + "_" + FIX
+   props = readProperties file:"${BRANCH_NAME}.properties"
+   VERSION = props['version']
 }
 
 
