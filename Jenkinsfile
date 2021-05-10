@@ -19,7 +19,7 @@ node {
 
 properties([
    parameters([ 
-      string(name: 'distribution', defaultValue: "$distribution", description: 'apt distribution'),
+      string(name: 'distribution', defaultValue: defaults['DOES_NOT_EXIST'], description: 'apt distribution'),
       string(name: 'tag', defaultValue: "$tag", description: 'just a tag'),
       choice(name: 'gradle_log_level', defaultValue: "$gradle_log_level", choices: ['quiet', 'warn', 'info', 'debug'].join('\n'), description: 'quiet || warn || info || debug')
    ])
