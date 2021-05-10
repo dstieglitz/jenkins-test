@@ -5,8 +5,8 @@ def RELEASE
 
 node {
    props = readProperties file:'jenkinsfile.properties'
-   VERSION = props['version']
-   FIX = props['fix']
+   VERSION = props['distribution_property']
+   FIX = props['tag_property']
    RELEASE = VERSION + "_" + FIX
 }
 
