@@ -15,6 +15,7 @@ node {
    defaults = [:]
    defaults.putAll(all_defaults)
    defaults.putAll(branch_defaults)
+   defaults.putAll(subdir)
    println defaults
 }
 
