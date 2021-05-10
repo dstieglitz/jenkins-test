@@ -7,6 +7,7 @@ def defaults
 node {
    all_defaults = readProperties file: 'jenkinsfile.properties'
    branch_defaults = readProperties file:"${BRANCH_NAME}.properties"
+   subdir = readProperties file:"sub/sub.properties"
    VERSION = branch_defaults['version']
    distribution = all_defaults['distribution_property']
    tag = all_defaults['tag_property']
