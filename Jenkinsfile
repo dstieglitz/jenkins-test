@@ -1,3 +1,5 @@
+import groovy.json.JsonSlurper
+
 def distribution
 def VERSION
 def tag
