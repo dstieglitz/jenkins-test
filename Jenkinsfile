@@ -43,7 +43,18 @@ pipeline {
        stage('Test HTTP Request') {
           steps {
              script {
-                 def response = httpRequest 'https://dog.ceo/api/breeds/list/all'
+//                 def response = httpRequest 'https://dog.ceo/api/breeds/list/all'
+
+                def patchOrg = """
+                  {"description": "$description"}
+                """
+                
+                def response = httpRequest acceptType: 'APPLICATION_JSON', 
+                    contentType: 'APPLICATION_JSON', 
+                    httpMode: 'POST', 
+                    requestBody: patchOrg, 
+                    url: "https://api.github.com/orgs/${orgName}"
+  
                  def json = new JsonSlurper().parseText(response.content)
 
                  echo "Status: ${response.status}"
