@@ -40,9 +40,14 @@ pipeline {
         }
        stage('Test HTTP Request') {
           steps {
-              def response = httpRequest 'http://localhost:8080/jenkins/api/json?pretty=true'
-              println("Status: "+response.status)
-              println("Content: "+response.content)
+             script {
+                 def response = httpRequest 'https://dog.ceo/api/breeds/list/all'
+                 def json = new JsonSlurper().parseText(response.content)
+
+                 echo "Status: ${response.status}"
+
+                 echo "Dogs: ${json.message.keySet()}"
+             }
           }
        }
     }
