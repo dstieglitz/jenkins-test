@@ -44,6 +44,7 @@ pipeline {
               println("Status: "+response.status)
               println("Content: "+response.content)
           }
+       }
     }
 }
 
