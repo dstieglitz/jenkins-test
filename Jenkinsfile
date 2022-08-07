@@ -64,11 +64,11 @@ pipeline {
 //          }
 //       }
 //    }
-        post {
-            always {
-                script {
-                    currentBuild.description = "version=${BUILD_NUMBER}"
-                }
+    }
+    post {
+        always {
+            script {
+                currentBuild.description = "version=${BUILD_NUMBER}"
             }
         }
     }
