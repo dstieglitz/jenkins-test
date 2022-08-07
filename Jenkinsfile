@@ -45,9 +45,9 @@ pipeline {
              script {
 //                 def response = httpRequest 'https://dog.ceo/api/breeds/list/all'
 
-                def patchOrg = """
-                  {"description": "$description"}
-                """
+//                def patchOrg = """
+//                  {"description": "$description"}
+//                """
                 
                 def response = httpRequest acceptType: 'APPLICATION_JSON', 
                     contentType: 'APPLICATION_JSON', 
